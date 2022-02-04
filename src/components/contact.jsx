@@ -1,13 +1,14 @@
-const Contact = ({name}) => {
+const Contact = ({name, address, city, state, zipcode, phone, job}) => {
     return (
         
             <li>
                 <h2>{name}</h2>
-                <p> 123 Main St</p>
-                <p>Springfield, OR</p>
-                <p>86403</p>
-                <p>555-897-8495</p>
-                <p>sally@email.com</p>
+                <p>{address}</p>
+                <p>{city},</p>
+                <p>{state}</p>
+                <p>{zipcode}</p>
+                <p>{phone}</p>
+                <p>{job}</p>
             </li>
         
         
