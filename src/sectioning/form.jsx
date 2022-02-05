@@ -67,7 +67,7 @@ function MyForm() {
         </label>
         <label>Email:
         <input 
-          type="string" 
+          type="email" 
           name="email" 
           value={inputs.email || ""} 
           onChange={handleChange}
