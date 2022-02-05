@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Contact from "../components/contact"
 import { mockResponse } from "../utils/mockResponse";
-import Counter from "../components/counter";
 
 const Main = () => {
     const response = mockResponse();
@@ -17,7 +16,6 @@ const Main = () => {
 
     return(
         <>
-            <Counter />
             <ul>{contacts}</ul>
         </>
         
