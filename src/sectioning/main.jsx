@@ -8,7 +8,6 @@ const Main = () => {
     const contacts = response.map((contact, index) => {
         return (
             <>
-                <Counter />
                 <Contact contact={contact} key={index} />
             </>
 
@@ -17,7 +16,8 @@ const Main = () => {
         
 
     return(
-        <>  
+        <>
+            <Counter />
             <ul>{contacts}</ul>
         </>
         
