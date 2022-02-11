@@ -23,3 +23,15 @@ footer {
   flex-shrink: 0;
 }
 
+
+.modal {
+  background-color: cornsilk;
+  border: 1px dashed red;
+  left: 50%;
+  padding: 40px 0;
+  position: absolute;
+  width: 40%;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
