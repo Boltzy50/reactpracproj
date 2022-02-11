@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 
 const MyForm = ({ action }) => {
   
-  const [inputs, setInputs] = useState("");
+  const [inputs, setInputs] = useState({});
 
   const handleChange = e => {
     const name = e.target.name;
@@ -16,12 +16,12 @@ const MyForm = ({ action }) => {
 
 
   return (
-    <form onSubmit={(e) => action(e,inputs)}>
-      <label>Enter your name:
+    <form onSubmit={(e) => action(e, inputs)}>
+      <label>Name:
         <input 
           type="string"
           name="name"
-          value={inputs.name}
+          value={inputs.name || ""}
           onChange={handleChange}
         />
       </label>
