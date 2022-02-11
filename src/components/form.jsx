@@ -1,6 +1,5 @@
 import React from 'react';
 import { useState } from "react";
-import ReactDOM from 'react-dom';
 
 const MyForm = ({ action }) => {
   
@@ -10,13 +9,18 @@ const MyForm = ({ action }) => {
     const name = e.target.name;
     const value = e.target.value;
     setInputs(values => ({...values, [name]: value}))
+  };
 
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    action(inputs);
+    setInputs({})
   }
 
 
-
   return (
-    <form onSubmit={(e) => action(e, inputs)}>
+    <form onSubmit={handleSubmit} >
       <label>Name:
         <input 
           type="string"

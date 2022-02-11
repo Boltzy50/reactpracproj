@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Contact from "../components/contact"
+import Modal from "../components/modal";
 import { mockResponse } from "../utils/mockResponse";
 import MyForm from "../components/form";
 import { Route, Routes } from "react-router-dom";
@@ -8,26 +9,20 @@ const Main = () => {
     const response = mockResponse();
     
     const [fields, setFields] = useState([]);
+    const [isShowModal, setIshShowModal] = useState(false);
 
     useEffect(() => {
         setFields(mockResponse());
     }, []);
     
-    const handleSubmit = (e, inputs) => {
-        e.preventDefault();
-        const updatedContacts = [...fields, inputs];
-        setFields(updatedContacts);      
-    }
-
-    // const newContacts = fields.map((contact, index) =>{
-    //     return <Contact contact={contact} key={index} />;
-    // });
-
+    const handleSubmit = setInputs => {
+        const updatedContacts = [...fields, setInputs];
+        setFields(updatedContacts);
+        setIshShowModal(true);
+    };
 
     const contacts = fields.map((contact, index) => {
-        return (
-            <Contact contact={contact} key={index} />
-        )
+        return <Contact contact={contact} key={index} />
     });
         
 
@@ -39,6 +34,7 @@ const Main = () => {
                 <Route path="list" element={<ul>{contacts}</ul>} />
                 <Route path="*" element={<h1>Page Not Found</h1>} />
             </Routes>
+            {isShowModal && <Modal message="Contact added" />}
 
         </>
         
